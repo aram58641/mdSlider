@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Slides</title>
-    <script src="https://cdn.jsdelivr.net/npm/@marp-team/marp-core@latest/dist/browser/index.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Slides</title>
 </head>
 <body>
-    <div id="slides">s</div>
-    <script>
-        fetch('slides.md')
-            .then(response => response.text())
-            .then(markdown => {
-                const marp = new Marp();
-                const html = marp.render(markdown);
-                document.getElementById('slides').innerHTML = html;
-            })
-            .catch(err => console.error('Error loading Markdown:', err));
-    </script>
+  <h1>📄 Загружаем Markdown...</h1>
+  <div id="slides"></div>
+
+  <script type="module">
+    console.log("🚀 Скрипт запущен");
+
+    import { Marpit } from "https://esm.sh/@marp-team/marpit";
+
+    fetch('slides.md')
+      .then(response => response.text())
+      .then(markdown => {
+        console.log("📄 Markdown загружен:\n", markdown);
+
+        const marpit = new Marpit();
+        const { html, css } = marpit.render(markdown);
+
+        // Добавляем стили
+        const style = document.createElement("style");
+        style.innerHTML = css;
+        document.head.appendChild(style);
+
+        document.getElementById('slides').innerHTML = html;
+      })
+      .catch(err => console.error('❌ Ошибка загрузки Markdown:', err));
+  </script>
 </body>
 </html>
