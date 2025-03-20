@@ -1,18 +1,32 @@
 ---
 marp: true
 theme: default
+paginate: true
 ---
 
-# Привет, мир! 👋
+# Welcome to My Slides 🚀
 
-## Добро пожаловать в мою презентацию
-
-- Это слайд, сделанный в **Markdown**
-- Он поддерживает _форматирование_, **списки**, и даже 🖼️ изображения!
-- Можно экспортировать в **PDF** или **PPTX**
+## A Quick Guide to Markdown Formatting
 
 ---
-## Следующий слайд
 
-Вот ещё один слайд!
+## Basic Text Formatting
 
+- **Bold**: `**text**`
+- *Italic*: `*text*`
+- `Inline code`: backticks
+
+---
+
+## 🎉 Next Slide Button Works!
+
+- Use arrow keys ⬅️➡️ to navigate  
+- Or click "Next" / "Previous"  
+
+---
+
+## How to Host on GitHub?  
+
+1. Commit your `.md` file  
+2. Enable GitHub Pages  
+3. Share the link! 🚀
