@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Slides</title>
+    <script src="https://cdn.jsdelivr.net/npm/@marp-team/marp-core@latest/dist/browser/index.js"></script>
+</head>
+<body>
+    <div id="slides"></div>
+    <script>
+        fetch('slides.md')
+            .then(response => response.text())
+            .then(markdown => {
+                const marp = new Marp();
+                const html = marp.render(markdown);
+                document.getElementById('slides').innerHTML = html;
+            })
+            .catch(err => console.error('Error loading Markdown:', err));
+    </script>
+</body>
+</html>
