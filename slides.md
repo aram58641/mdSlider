@@ -1,147 +1,41 @@
-# Welcome to Markdown Slides! 🚀
-## A Quick Guide to Markdown Formatting
+<script>
+// Слайдер на JavaScript
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
 
----
-
-# Basic Text Formatting
-
-## Make Your Text Stand Out
-- Use **double asterisks** for **bold text**
-- Use *single asterisks* for *italic text*
-- Use backticks for `inline code`
----
-- Use > for blockquotes
-- Use --- for slide breaks
-
-> This is a blockquote. Great for highlighting important points!
-
----
-
-# Lists and Structure
-
-## Ordered and Unordered Lists
-1. First ordered item
-2. Second ordered item
-3. Third ordered item
----
-- Unordered list uses hyphens
-- Another bullet point
-  - Indent with two spaces
-  - For nested lists
-
-## Task Lists
-- [x] Completed task
-- [ ] Pending task
-
----
-
-# Code Blocks and Tables
----
-## Code Example
-```javascript
-// Use three backticks for code blocks
-function greet(name) {
-  return `Hello, ${name}!`;
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
 }
-```
----
-## Table Example
-| Element | Markdown Syntax |
-|---------|----------------|
-| Bold | `**text**` |
-| Italic | `*text*` |
-| Code | ```code``` |
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+window.onload = function() {
+    showSlide(currentSlide);
+}
+</script>
 
 ---
-
-# Links and Images
-
----
-
-## Adding Links
-- [Click here](https://example.com) - `[text](url)`
-- <https://example.com> - `<url>`
----
-## Adding Images
-![Image Example](https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&h=400&fit=crop)
-`![alt text](image-url)`
+# Slide 1
+![Image 1](data:image/webp;base64,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)
 
 ---
-
-# Mathematical Expressions
-
----
-
-# Inline Math
-Here are some examples of inline math expressions:
-
-- Einstein's famous equation: $E = mc^2$
-- The quadratic formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
-- Euler's identity: $e^{i\pi} + 1 = 0$
-- Pythagorean theorem: $a^2 + b^2 = c^2$
----
-# Block Math
-Here are some examples of block math expressions:
-
-$$
-\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-$$
----
-## Maxwell's Equations
-$$
-\begin{aligned}
-\nabla \times \vec{\mathbf{B}} &= \frac{4\pi}{c}\vec{\mathbf{j}} + \frac{1}{c}\frac{\partial\vec{\mathbf{E}}}{\partial t} \\
-\nabla \cdot \vec{\mathbf{E}} &= 4\pi\rho \\
-\nabla \times \vec{\mathbf{E}} &= -\frac{1}{c}\frac{\partial\vec{\mathbf{B}}}{\partial t} \\
-\nabla \cdot \vec{\mathbf{B}} &= 0
-\end{aligned}
-$$
----
-## More Examples
-$$
-\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}
-$$
-
-$$
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix} =
-\begin{pmatrix}
-ax + by \\
-cx + dy
-\end{pmatrix}
-$$
+# Slide 2
+![Image 2](data:image/webp;base64,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)
 
 ---
+# Slide 3
+![Image 3](data:image/webp;base64,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)
 
-# Tips for Great Slides
-
-## Best Practices
-1. Keep content concise
-2. Use visual hierarchy
-3. Include examples
-4. Add relevant images
-5. Use consistent styling
----
-## Remember
-- One main idea per slide
-- Use headings for structure
-- Include engaging visuals
-- Test your formatting
-
----
-
-# Ready to Create?
-
-## Start Making Your Slides!
-1. Write in markdown
-2. Preview in real-time
-3. Export to PDF/PPTX
-4. Share with others
----
-## Happy Presenting! 🎉
+<!-- Controls -->
+<button onclick="prevSlide()">❮ Prev</button>
+<button onclick="nextSlide()">Next ❯</button>
